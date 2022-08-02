@@ -1,0 +1,20 @@
+body{
+    background: url(https://thumbs.dreamstime.com/z/seamless-pattern-sun-clouds-rain-rainbow-wallpaper-children-room-weather-background-seamless-pattern-sun-clouds-156099778.jpg);
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+
+}
+.weather-box{
+    background-color: rgba(128, 128, 128, 0.507);
+    border-radius: 10px;
+    padding: 50px;
+}

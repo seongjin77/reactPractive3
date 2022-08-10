@@ -16,8 +16,7 @@ function App() {
   const [weather, setWeather] = useState(null);
   const [city, setCity] = useState("");
   const [loading, setLoading] = useState(false);
-  const cities = ["current Location", "paris", "new york", "tokyo", "seoul"];
-  const [cityweather, setCityWeather] = useState(null);
+  const cities = ["paris", "new york", "tokyo", "seoul"];
 
   const getCurrentLocation = () => {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -45,6 +44,14 @@ function App() {
     setLoading(false);
   };
 
+  const handleCityChange = (city) => {
+    if (city === "current") {
+      setCity('');
+    } else {
+      setCity(city);
+    }
+  };
+
   useEffect(() => {
     if (city === "") {
       getCurrentLocation();
@@ -66,7 +73,7 @@ function App() {
       ) : (
         <div className="container">
           <WeatherBox weather={weather} />
-          <WeatherButton cities={cities} setCity={setCity} />
+          <WeatherButton cities={cities} handleCityChange={handleCityChange} City={city} />
         </div>
       )}
     </div>
